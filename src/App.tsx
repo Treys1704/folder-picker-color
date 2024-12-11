@@ -49,9 +49,10 @@ export default function App() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-8 bg-gray-100">
       {/* Folder */}
+
       <div className="relative w-64 h-48" id="folder">
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 rounded-xl overflow-hidden"
           style={{
             backgroundColor: selectedColor.value,
             clipPath: "path('M 0 25 L 25 0 H 240 L 255 25 V 190 H 0 Z')",
@@ -115,8 +116,8 @@ export default function App() {
             initial={{ scale: 0 }}
             animate={{
               scale: [0, 1, 1, 0],
-              x: [0, 0, folderPosition.x - dotPosition.x],
-              y: [0, -100, folderPosition.y - dotPosition.y],
+              x: [0, folderPosition.x - dotPosition.x],
+              y: [0, folderPosition.y - dotPosition.y],
             }}
             transition={{
               duration: 0.5,
